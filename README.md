@@ -1,92 +1,63 @@
-# Projeto Modelo DEV+
+# Finlytics — Assistente Financeiro Pessoal
 
-[STATUS BADGE AQUI]  
-_Ex: `Em desenvolvimento`, `Produção`, `Em validação`_
+`Em desenvolvimento` · MVP previsto para 31/05/2026
+
+---
 
 ## 1. Visão Geral e a Dor
 
-[Descreva o problema real que este projeto resolve, de forma direta e estratégica. Evite falar que é um "projeto de estudo" ou "teste pessoal". Mostre o contexto de negócio e a necessidade do usuário final.]
+A maioria das pessoas olha o extrato bancário e não consegue responder uma pergunta simples: *"pra onde foi meu dinheiro?"*. O Finlytics resolve isso transformando o extrato bruto em uma visão clara: saldo do mês, total por categoria e top 3 de gastos — sem precisar de planilha, sem digitar transação a transação.
 
-- O que está sendo resolvido?
-- Quem sofre com esse problema?
-- Por que isso importa para produto/negócio?
+**Para quem é:**
+O Finlytics é pensado para pessoas físicas que querem entender seus gastos sem o trabalho de manter planilha. O público inclui tanto quem nunca conseguiu criar o hábito de acompanhar finanças, quanto quem tentou planilhas no Excel e desistiu por achar manual e cansativo demais.
+
+**Por que isso importa:**
+O mercado de gestão financeira pessoal é maduro e prova que existe demanda real — mas a maioria dos apps consolidados exige cadastro completo, integração bancária e, muitas vezes, assinatura paga. O Finlytics ataca um público que esses produtos não alcançam: pessoas que querem entender seus gastos de forma prática, gratuita e sem fricção. A proposta vai além de listar gastos — é mostrar onde o dinheiro está indo para que o usuário tenha mais consciência na hora de fazer escolhas financeiras.
+
+---
 
 ## 2. Arquitetura e Decisões Técnicas
 
-Explique o porquê por trás de cada escolha técnica. Isso mostra maturidade e alinhamento com requisitos reais.
+Cada escolha técnica deste projeto foi feita com foco em três critérios: **velocidade de entrega no MVP**, **clareza do pipeline** e **caminho natural para evoluir com IA**. A tabela abaixo resume o que está implementado e o que está planejado para os próximos passos.
 
-| Camada           | Escolha                                | Por que escolhi isso?                           | Alternativa considerada               | Nota de impacto                               |
-| ---------------- | -------------------------------------- | ----------------------------------------------- | ------------------------------------- | --------------------------------------------- |
-| Front-end        | [React / Vue / Angular / Outra]        | [Explique o motivo técnico e de manutenção]     | [Por exemplo: Vue / HTML puro]        | [Performance, time-to-market, escalabilidade] |
-| Back-end         | [Node.js / Python / Java / Outra]      | [Por que essa stack atende o problema?]         | [Ex: PHP, .NET]                       | [Deploy, comunidade, integração]              |
-| Banco de dados   | [MySQL / PostgreSQL / MongoDB / Outra] | [Consistência, modelo de dados, escalabilidade] | [Ex: DynamoDB, SQLite]                | [Transações, queries, custo]                  |
-| API / Integração | [REST / GraphQL / gRPC / Outra]        | [Como isso melhora a experiência dev/cliente?]  | [REST, SOAP]                          | [Flexibilidade, versionamento]                |
-| IA / Dados       | [Biblioteca / Modelo / Serviço]        | [Por que usar essa solução e não outra?]        | [Ex: OpenAI, HuggingFace, TensorFlow] | [Precisão, custo, performance]                |
+| Camada | Escolha | Status | Por que escolhi? |
+|---|---|---|---|
+| **Linguagem** | Python | ✅ Implementado | Ecossistema maduro para análise de dados e IA, com base sólida do meu aprendizado prévio em BI e bootcamp de GenAI. Mesma linguagem do CSV ao Gemini, sem trocar stack. |
+| **Manipulação de dados** | pandas | ✅ Implementado | Resolve em uma linha operações que em Python puro exigiriam laços manuais — filtrar transações, agrupar por categoria, somar valores, converter datas. Integra naturalmente com numpy, matplotlib, Streamlit e APIs de IA, permitindo construir o pipeline inteiro do extrato ao insight sem trocar de ferramenta. |
+| **Persistência** | CSV | ✅ Implementado | Entrada direta do extrato bancário, sem fricção de cadastro ou integração bancária. SQLite no roadmap para suporte a histórico multi-mês. |
+| **Interface** | Streamlit | 🟡 Planejado | Mantém a stack 100% em Python, sem fricção de aprender HTML/CSS/JS no escopo do MVP. Padrão do mercado de dados para protótipos e dashboards. |
+| **IA** | Gemini | 🟡 Planejado | API de LLM escolhida por custo baixo por requisição em comparação às alternativas (OpenAI, Claude). Função no projeto: categorizar transações que não foram classificadas pela regra de palavras-chave, e gerar resumo opinativo dos gastos do mês. Arquitetura prevista é um **pipeline híbrido** (regra → cache → LLM como fallback) para minimizar chamadas pagas à API. |
+
+---
 
 ## 3. Demonstração
 
-[Insira um GIF da aplicação funcionando ou um link de deploy / Streamlit / Vercel / Netlify / Heroku / AWS.]
+🚧 *Em construção. Aguardando implementação da interface (Streamlit) para gerar demo visual.*
 
-- Demo rápida: [LINK DO DEPLOY OU VÍDEO]
-- Observação: o recrutador deve ver o fluxo principal em 15 segundos.
+---
 
-## 4. Destaque de Engenharia / "The Hard Part"
+## 4. Destaque de Engenharia — The Hard Part
 
-Compartilhe o trecho mais relevante do seu projeto. Use um bloco de código comentado para explicar o que você fez e por quê.
+🚧 *Em construção. Será desenvolvido junto com a implementação do pipeline híbrido de categorização (regra → cache → LLM).*
 
-```js
-// [Cole aqui o código do desafio técnico mais complexo que você enfrentou.]
-// Por exemplo: otimização de consulta, cache, arquitetura de dados, processamento em lote, validação complexa, modelo de IA.
-// Explique cada passo e o impacto da solução neste projeto.
-```
-
-> [Foque em uma entrega concreta, nem tudo precisa ser perfeito. O importante é clareza, decisão técnica e resultado.]
+---
 
 ## 5. Insights e Valor de Negócio
 
-[Quais decisões podem virar ação? Como esse projeto cria valor real?]
+🚧 *Em construção.*
 
-- Para produto: [Ex: aumento de conversão, redução de atrito, automação de atendimento]
-- Para negócio: [Ex: melhores métricas, economia de custo, novos canais de receita]
-- Para dados / IA: [Quais respostas são possíveis com os dados gerados? Que hipóteses podem ser testadas?]
+---
 
 ## 6. Instruções de Instalação e Uso
 
-Siga passos claros para rodar o projeto sem atrito.
+🚧 *Em construção. Documentação completa será adicionada quando o app estiver funcional.*
 
-```bash
-# 1. Clone o fork
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
+---
 
-# 2. Instale dependências
-[Ex: npm install | pip install -r requirements.txt]
+## 7. Roadmap
 
-# 3. Configure variáveis de ambiente
-# Copie .env.example para .env e preencha as chaves necessárias
+🚧 *Em construção.*
 
-# 4. Execute a aplicação
-[Ex: npm run dev | python main.py | docker compose up]
-```
+---
 
-### Uso
-
-- Abra [URL ou endpoint principal]
-- Teste [fluxo principal, ex: criação de usuário, upload de arquivo, previsão de modelo]
-
-> [Se algo estiver faltando, documente o passo mínimo necessário para o avaliador conseguir testar a entrega.]
-
-## 7. Roadmap / Próximos Passos
-
-[Mostre visão de produto e engenharia. O que você faria se tivesse mais tempo?]
-
-- [Melhorias imediatas]
-- [Refatoração ou arquitetura de longo prazo]
-- [Monitoração, testes, métricas ou automação]
-
-## 8. Como preencher este template
-
-- Substitua todos os blocos entre colchetes pelo seu conteúdo real.
-- Não tente fazer o README perfeito: entregue clareza e foco no valor.
-- Use exemplos concretos, métricas e decisões técnicas claras.
-- O objetivo é mostrar que você sabe resolver problemas reais e justificar suas escolhas.
+*Última atualização: 16/05/2026*
