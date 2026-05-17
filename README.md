@@ -32,31 +32,31 @@ Cada escolha técnica deste projeto foi feita com foco em três critérios: **ve
 
 ## 3. Demonstração
 
- *Em construção. Aguardando implementação da interface (Streamlit) para gerar demo visual.*
+*Em construção. Aguardando implementação da interface (Streamlit) para gerar demo visual.*
 
 ---
 
 ## 4. Destaque de Engenharia, The Hard Part
 
- *Em construção. Será desenvolvido junto com a implementação do pipeline híbrido de categorização (regra, cache, LLM).*
+*Em construção. Será desenvolvido junto com a implementação do pipeline híbrido de categorização (regra, cache, LLM).*
 
 ---
 
 ## 5. Insights e Valor de Negócio
 
- *Em construção.*
+*Em construção.*
 
 ---
 
 ## 6. Instruções de Instalação e Uso
 
- *Em construção. Documentação completa será adicionada quando o app estiver funcional.*
+*Em construção. Documentação completa será adicionada quando o app estiver funcional.*
 
 ---
 
 ## 7. Roadmap
 
- *Em construção.*
+*Em construção.*
 
 ---
 
