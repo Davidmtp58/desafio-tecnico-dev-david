@@ -55,8 +55,6 @@ Cada usuário que processa um extrato no Finlytics gera, na prática, uma linha 
 
 ## 6. Instruções de Instalação e Uso
 
-## 6. Instruções de Instalação e Uso
-
 ### Pré-requisitos
 - Python 3.12 ou superior
 - Git
