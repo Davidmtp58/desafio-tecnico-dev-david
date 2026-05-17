@@ -55,8 +55,39 @@ Cada usuário que processa um extrato no Finlytics gera, na prática, uma linha 
 
 ## 6. Instruções de Instalação e Uso
 
-*Em construção. Documentação completa será adicionada quando o app estiver funcional.*
+## 6. Instruções de Instalação e Uso
 
+### Pré-requisitos
+- Python 3.12 ou superior
+- Git
+
+### Passo a passo
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/Davidmtp58/finlytics.git
+cd finlytics
+
+# 2. Crie e ative o ambiente virtual
+python -m venv venv
+.\venv\Scripts\Activate.ps1     # Windows (PowerShell)
+# source venv/bin/activate       # Linux / macOS
+
+# 3. Instale as dependências
+pip install -r requirements.txt
+
+# 4. Execute o script de análise
+python relatorio_financeiro.py
+```
+
+### O que esperar
+
+O script processa o arquivo `extrato_exemplo.csv` (incluído no repositório) e imprime no terminal:
+- Tabela com transações categorizadas
+- Total gasto por categoria
+- Top 3 categorias de maior gasto no mês
+
+*Versão com interface visual (Streamlit) prevista no roadmap.*
 ---
 
 ## 7. Roadmap
