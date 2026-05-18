@@ -18,6 +18,12 @@ else:
         df,
         disabled=["data", "descricao", "valor"],
         use_container_width=True,
+        column_config={
+            "valor": st.column_config.NumberColumn(
+                "Valor",
+                format="R$ %.2f"
+            ),
+        },
     )
 
     # A partir daqui, tudo usa df_editado
